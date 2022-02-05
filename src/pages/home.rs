@@ -33,7 +33,7 @@ impl Component for Home {
                 </div>
 
                 <div class=classes!("tile", "is-parent", "container")>
-                    <p class=classes!("box", "has-text-centered", "has-text-white")>
+                    <p class=classes!("block", "has-text-centered", "mx-3", "top-border", "bottom-aligned")>
                     {"A website built to learn Rust and WASM. Powered by "}
                     <strong class="is-main-dark">{"Bulma"}</strong>
                     {" and "}
@@ -49,20 +49,20 @@ impl Component for Home {
 impl Home {
     fn view_socials(&self) -> Html {
         html!{
-            <div class=classes!("columns", "mx-5")>
-                <div class=classes!("column")>
+            <div class=classes!("columns", "mx-5", "is-centered")>
+                <div class=classes!("column", "is-narrow")>
                     <div class=classes!("box")>
                         <h1 class=classes!("has-text-white")>{"Discord"}</h1>
                     </div>                    
                 </div>
 
-                <div class=classes!("column")>
+                <div class=classes!("column", "is-narrow")>
                     <div class=classes!("box")>
                         <h1 class=classes!("has-text-white")>{"Twitter"}</h1>
                     </div> 
                 </div>
 
-                <div class=classes!("column")>
+                <div class=classes!("column", "is-narrow")>
                     <div class=classes!("box")>
                         <h1 class=classes!("has-text-white")>{"LinkedIn"}</h1>
                     </div> 

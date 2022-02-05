@@ -161,10 +161,10 @@ impl Model {
             <nav class="navbar is-background-main" role="navigation" aria-label="main navigation">
                 //Div specifically for mobile navigation to use the navbar-menu on mobile
                 <div class="navbar-brand">
-                    <h1 class="is-size-3 my-2 mx-3 ">{ "Xel's Blog" }</h1>
+                    <h1 class="is-size-3 has-text-light my-2 mx-3 ">{ "Xel's Blog" }</h1>
 
                     <a role="button"
-                        class=classes!("navbar-burger", "burger", "mt-1", active_class)
+                        class=classes!("navbar-burger", "burger", "mt-1", "has-text-light", active_class)
                         aria-label="menu" aria-expanded="false"
                         onclick=link.callback(|_| Msg::ToggleNavbar)
                     >
@@ -173,16 +173,16 @@ impl Model {
                         <span class="" aria-hidden="true"></span>
                     </a>
                 </div>
-                <div class=classes!("navbar-menu", active_class, "is-background-main")>
+                <div class=classes!("navbar-menu", "is-background-main", "ml-2" , active_class)>
                     <div class="navbar-start">
                         <AppAnchor classes="navbar-item" route=AppRoute::Home>
-                            <a class=classes!("")>{"Home"}</a>
+                            <a class=classes!("has-text-light")>{"Home"}</a>
                         </AppAnchor>
                         <AppAnchor classes="navbar-item" route=AppRoute::PostList>
-                            <a class=classes!("")>{"Posts"}</a>
+                            <a class=classes!("has-text-light")>{"Posts"}</a>
                         </AppAnchor>
                         <AppAnchor classes="navbar-item" route=AppRoute::ProjectList>
-                            <a class=classes!("")>{"Projects"}</a>
+                            <a class=classes!("has-text-light")>{"Projects"}</a>
                         </AppAnchor>
                     </div>
                 </div>

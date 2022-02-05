@@ -7,7 +7,7 @@ mod switch;
 use switch::{AppAnchor, AppRoute, AppRouter, PublicUrlSwitch};
 
 mod pages;
-use pages::{home::Home};
+use pages::{home::Home, posts::Posts, projects::Projects};
 
 enum Msg {
     ToggleNavbar,
@@ -104,7 +104,7 @@ impl Component for Model {
                 }
 
                 .center-box {
-                    height: 90%;
+                    height: 85vh;
                     width: 80%;
                     border-radius: 12px;
                     box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 30px;
@@ -112,8 +112,7 @@ impl Component for Model {
                     background-color: #e1eff4;
                     position: relative;
                     margin: auto;
-                    margin-top: 100px;
-                    margin-bottom: 100px;
+                    margin-top: 5%;
                 }
 
                 .top-border {
@@ -121,6 +120,12 @@ impl Component for Model {
                     padding-top: 10px;
                 }
 
+                .anchor-bottom {
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0px;
+                    margin: auto 0;
+                }
                 "}
                 </style>
 
@@ -134,6 +139,7 @@ impl Component for Model {
                         render=AppRouter::render(Self::switch)
                         redirect=AppRouter::redirect(|route: Route| {AppRoute::PageNotFound(Permissive(Some(route.route))).into_public() })
                     />
+                    { self.view_footer() }
                 </div>
                 </main>
             </>
@@ -184,17 +190,31 @@ impl Model {
         }
     }
 
+    fn view_footer(&self) -> Html {
+        html!{
+            <div class=classes!("tile", "is-child", "hero", "anchor-bottom")>
+            <div class=classes!("tile", "is-parent", "container")>
+                <p class=classes!("block", "has-text-centered", "mx-3", "top-border", "bottom-aligned")>
+                    {"A website built to learn Rust and WASM. Powered by "}
+                    <strong class="is-main-dark">{"Bulma"}</strong>
+                    {" and "}
+                    <strong class="is-main-dark">{"Yew"}</strong>
+                    {"."}
+                </p>
+            </div>
+            </div>
+        }
+    }
+
     fn switch(switch: PublicUrlSwitch) -> Html {
         match switch.route() {
             AppRoute::Post(id) => todo!(),
             AppRoute::PostListPage(page) => todo!(),
-            AppRoute::PostList => todo!(),
+            AppRoute::PostList => { html! {<Posts />} },
             AppRoute::Project(id) => todo!(),
             AppRoute::ProjectListPage(page) => todo!(),
-            AppRoute::ProjectList => todo!(),
-            AppRoute::Home => {
-                html! {<Home />}
-            },
+            AppRoute::ProjectList => { html! {<Projects />} },
+            AppRoute::Home => { html! {<Home />} },
             AppRoute::PageNotFound(Permissive(route)) => todo!(),
         }
     }

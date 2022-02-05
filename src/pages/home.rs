@@ -31,16 +31,6 @@ impl Component for Home {
                     <h1 class=classes!("hero-body", "pb-5")>{"Here's links to some socials:"}</h1>
                     {self.view_socials()}
                 </div>
-
-                <div class=classes!("tile", "is-parent", "container")>
-                    <p class=classes!("block", "has-text-centered", "mx-3", "top-border", "bottom-aligned")>
-                    {"A website built to learn Rust and WASM. Powered by "}
-                    <strong class="is-main-dark">{"Bulma"}</strong>
-                    {" and "}
-                    <strong class="is-main-dark">{"Yew"}</strong>
-                    {"."}
-                    </p>
-                </div>
             </div>
         }
     }
@@ -52,19 +42,19 @@ impl Home {
             <div class=classes!("columns", "mx-5", "is-centered")>
                 <div class=classes!("column", "is-narrow")>
                     <div class=classes!("box")>
-                        <h1 class=classes!("has-text-white")>{"Discord"}</h1>
+                        <h1 class=classes!("has-text-white")>{"LinkedIn"}</h1>
                     </div>                    
                 </div>
 
                 <div class=classes!("column", "is-narrow")>
                     <div class=classes!("box")>
-                        <h1 class=classes!("has-text-white")>{"Twitter"}</h1>
+                        <h1 class=classes!("has-text-white")>{"Github"}</h1>
                     </div> 
                 </div>
 
                 <div class=classes!("column", "is-narrow")>
                     <div class=classes!("box")>
-                        <h1 class=classes!("has-text-white")>{"LinkedIn"}</h1>
+                        <h1 class=classes!("has-text-white")>{"Twitch"}</h1>
                     </div> 
                 </div>
             </div>

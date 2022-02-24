@@ -20,7 +20,7 @@ impl Component for Home {
     fn view(&self) -> Html {
         html! {
             <div class=classes!("columns")>
-                <div class=classes!("column", "is-two-thirds") >
+                <div class=classes!("column", "is-three-fifths") >
                     <div class=classes!("tile", "is-ancestor", "is-vertical")>
                         <div class=classes!("tile", "is-child", "hero")>
                             <div class=classes!("hero-body", "container", "pb-0")>
@@ -35,7 +35,7 @@ impl Component for Home {
                     </div>
                 </div>
 
-                <div class=classes!("column")>
+                <div class=classes!("column", "p-6", "is-hidden-mobile")>
                     <figure class=classes!("image", "is-square")>
                         <img class=classes!("profile-picture") src="/assets/img/me.jpg" alt="Myself and Coheed the Samoyed."/>
                     </figure>

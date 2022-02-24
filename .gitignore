@@ -10,4 +10,4 @@ Cargo.lock
 **/*.rs.bk
 
 # Ignore the build files from trunk
-/dist/*.*
+dist/*
